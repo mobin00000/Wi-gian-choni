@@ -1,68 +1,39 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="fa">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تصویر نوار بهداشتی</title>
-    <style>
-        /* تنظیمات CSS برای نمایش تصویر بدون پس زمینه */
-        #image-container {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-        }
+  <meta charset="UTF-8">
+  <title>در حال اتصال...</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        #image-container img {
-            max-width: 80%;
-            max-height: 80%;
-        }
-    </style>
+    img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+  </style>
+  <script>
+    // جلوگیری از خروج با دکمه برگشت
+    window.history.pushState(null, null, window.location.href);
+    window.onpopstate = function () {
+      window.history.pushState(null, null, window.location.href);
+    };
+
+    // قفل بودن یک دقیقه
+    setTimeout(() => {
+      alert('حالا می‌تونی صفحه رو ببندی!');
+    }, 60000);
+  </script>
 </head>
 <body>
-
-<!-- لینک برای نمایش تصویر -->
-<a href="#" id="show-image-link">نمایش تصویر نوار بهداشتی</a>
-
-<!-- کانتینر تصویر -->
-<div id="image-container">
-    <img src=https://raw.githubusercontent.com/mobin00000/Wi-gian-choni/main/file_00000000004c6246bb85567973e65777_conversation_id=681938fc-d994-8006-8fb6-b3b62df047de&message_id=b5e881fd-f3d3-4efa-8428-7b4e36364ca5.png alt="نوار بهداشتی">
-</div>
-
-<script>
-    // گرفتن لینک و کانتینر تصویر
-    const showImageLink = document.getElementById('show-image-link');
-    const imageContainer = document.getElementById('image-container');
-
-    // نمایش تصویر زمانی که لینک کلیک می‌شود
-    showImageLink.addEventListener('click', function(event) {
-        event.preventDefault(); // جلوگیری از پیش‌فرض کلیک
-
-        // نمایش تصویر
-        imageContainer.style.display = 'flex';
-
-        // جلوگیری از خروج کاربر از صفحه برای مدت ۱ دقیقه
-        setTimeout(function() {
-            alert('شما باید ۱ دقیقه صبر کنید.');
-        }, 60000); // بعد از ۱ دقیقه
-
-        // جلوگیری از بازگشت به صفحه قبل
-        window.history.pushState(null, null, window.location.href);
-        window.onpopstate = function() {
-            window.history.pushState(null, null, window.location.href);
-        };
-    });
-
-    // پنهان کردن تصویر زمانی که روی آن کلیک می‌شود
-    imageContainer.addEventListener('click', function() {
-        imageContainer.style.display = 'none';
-    });
-</script>
-
+  <img src="https://raw.githubusercontent.com/mobin00000/Wi-gian-choni/main/file_00000000004c6246bb85567973e65777_conversation_id=681938fc-d994-8006-8fb6-b3b62df047de&message_id=b5e881fd-f3d3-4efa-8428-7b4e36364ca5.png" alt="loading">
 </body>
 </html>
